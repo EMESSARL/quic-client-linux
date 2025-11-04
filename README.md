@@ -22,14 +22,49 @@ Each test:
 
 ## 2. Requirements
 
-Before installing, make sure your system has:
+Before installation, make sure your system includes **Git** and **Go**.
+
+### For Debian / Ubuntu
 
 ```bash
-sudo apt install git -y        # or dnf/yum depending on the distro
-go version                     # Go must be installed manually via go.dev/doc/install
+sudo apt update
+sudo apt install -y git wget tar
+wget https://go.dev/dl/go1.22.6.linux-amd64.tar.gz
+sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.22.6.linux-amd64.tar.gz
+echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
+source ~/.bashrc
+go version
 ```
 
-You must have both `git` and `go` in your `$PATH`.
+### For Fedora / CentOS / RHEL
+
+```bash
+sudo dnf install -y git golang
+# or on older systems:
+# sudo yum install -y git golang
+go version
+```
+
+### For Arch Linux / Manjaro
+
+```bash
+sudo pacman -Syu --needed git go
+go version
+```
+
+### For openSUSE
+
+```bash
+sudo zypper install -y git go
+go version
+```
+
+If your distribution is **not listed above**, refer to the official documentation of your system for installing both tools:
+
+* [Install Go](https://go.dev/doc/install)
+* [Install Git](https://git-scm.com/download/linux)
+
+Both `git` and `go` must be available in your `$PATH` before running the installation script.
 
 ---
 
