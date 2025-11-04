@@ -76,7 +76,7 @@ Logs from each test run are stored in:
 
 ---
 
-## 6. Generated Files
+## 5. Generated Files
 
 | Type            | Location                                |
 | --------------- | --------------------------------------- |
